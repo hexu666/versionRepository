@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd     
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- 第一版本 -->
+	
+    <!-- 配置Handle，映射"/hello"请求 -->
+    <!-- <bean name="/hello" class="com.temp.controller.HelloController"/>  -->
+    
+
+    <!-- 处理映射器将bean的name作为url进行查找，需要在配置Handle时指定name（即url） -->
+    <!-- <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
+
+    <!-- SimpleControllerHandlerAdapter是一个处理器适配器，所有处理适配器都要实现 HandlerAdapter接口-->
+    <!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/> -->
+    
+    
+    <!-- 第一、二版本 -->
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/jsp/"></property>
+    	<property name="suffix" value=".jsp"></property>
+    </bean>
+    <!-- 为了准确地处理静态资源，需要在Spring mvc 配置文件中增加 resources元素 -->
+    <!-- mvc:annotation-driven 作用包括：用于注册基于注解的控制器中请求方法所用的bean对象 -->
+    <mvc:annotation-driven/>   
+    <mvc:resources mapping="/css/**" location="/css/"/>  
+    <mvc:resources mapping="/*.html" location="/"/>  
+    <!-- mvc:resources：指示哪些静态资源需要单独处理
+    	 【若没有 mvc:annotation-driven，mvc:resources会阻止任意控制器被调用。】	
+                这两者(mvc:annotation-driven,mvc:resources)配套使用，没有后者，也不需前者
+     --> 
+     
+     
+    <!-- 第二版本 -->    
+    <!--基于注解开发：优点在于一个控制器类可以有多个请求处理方法-->
+    <!-- 这里面主要是添加了约束文件、包扫配置、类型处理映射器、类型处理适配器。 -->
+    
+    <!-- spring可以自动去扫描base-pack下面的包或者子包下面的java文件，
+        如果扫描到有Spring的相关注解的类，则把这些类注册为Spring的bean -->
+    <context:component-scan base-package="com.temp.controller,com.temp.service"/>
+    
+    <!-- 配置处理映射器 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!-- 配置处理器适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    
+    
+
+</beans>
