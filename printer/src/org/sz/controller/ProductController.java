@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
-import com.temp.entity.Product;
-import com.temp.entity.ProductForm;
+import org.sz.entity.Product;
+import org.sz.entity.ProductForm;
 
 
 @Controller

@@ -1,6 +1,6 @@
 package org.sz.service.serviceImpl;
 
-import com.temp.service.HelloService;
+import org.sz.service.HelloService;
 
 import org.springframework.stereotype.Service;
 
