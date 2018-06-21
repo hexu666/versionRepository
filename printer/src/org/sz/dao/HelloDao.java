@@ -1,4 +1,4 @@
-package com.temp.dao;
+package org.sz.dao;
 
 public interface HelloDao {
 
