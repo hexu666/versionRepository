@@ -27,7 +27,7 @@ public class ProductController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		//add product
+		//add product to 
 		model.addAttribute("product", product);
 		
 		return "ProductDetails";
