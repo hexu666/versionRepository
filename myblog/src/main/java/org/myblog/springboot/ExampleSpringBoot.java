@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExampleSpringBoot {  
     @RequestMapping("/home")  
     String home() {  
-        return "Hello World!";  
+        return "Hello World,oh my god!";  
     }  
       
     public static void main(String[] args) {  
