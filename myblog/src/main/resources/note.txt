@@ -1,0 +1,4 @@
+1、springboot项目启动时提示Address already in use: bind
+
+   1.查看当前端口被哪个进程占用了   netstat -ano|findstr "8990"
+   2.基于进程号找进程名称 		 tasklist|findstr "2700"

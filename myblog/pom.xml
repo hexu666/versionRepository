@@ -8,6 +8,14 @@
 	<artifactId>myblog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	
+	<!-- spring官方的叫stater poms，它可以提供dependency management，也就是依赖管理，引入以后在声明其它dependency的时候就不需要version了 -->
+	<!-- 继承父包 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+	</parent>
 
 	<name>myblog Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
@@ -20,10 +28,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- spring-boot-start-web包含了spring webmvc和tomcat等web开发的特性 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -33,7 +45,7 @@
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>
-			    <!-- https://blog.csdn.net/lzh_86/article/details/80417793 -->
+				<!-- https://blog.csdn.net/lzh_86/article/details/80417793 -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -59,7 +71,7 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.0.0</version>
@@ -88,6 +100,11 @@
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
+				</plugin>
+				<!-- 直接Main启动spring，那么以下plugin必须要添加，否则是无法启动的。如果使用maven的spring-boot:run的话就不需要此配置 -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin </artifactId>
 				</plugin>
 			</plugins>
 		</pluginManagement>
