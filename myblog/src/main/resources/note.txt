@@ -1,8 +1,0 @@
-1、springboot项目启动时提示Address already in use: bind
-
-   1.查看当前端口被哪个进程占用了   netstat -ano|findstr "8990"
-   2.基于进程号找进程名称 		 tasklist|findstr "2700"
-   
- 2、eclipse在pull时发生冲突报错Checkout conflict with files
- 
-    https://blog.csdn.net/u014071328/article/details/72981420
