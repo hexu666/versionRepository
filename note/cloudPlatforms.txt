@@ -1,0 +1,4 @@
+
+平台即服务（platform as a service，PaaS）
+
+软件即服务（Software as a service，SaaS）：SaaS应用是完全在“云”里（也就是说，一个Internet服务提供商的服务器上）运行的。
