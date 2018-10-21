@@ -36,7 +36,7 @@ windows下使用IDEA创建VUE项目: https://www.jianshu.com/p/be837ce202db
         File - Settings - Languages&Frameworks - JavaScript：
                修改JavaScript language version为ECMAScript 6，确认
         File - Settings - Plugins：搜索vue，安装Vue.js               
-        Run - Edit Configurations...：点击加号，选择npm，Name为Run，package.json选择你工程中的package.json，Command为run，Scripts为dev,然后就               可以直接在idea中运行了
+        Run - Edit Configurations...：点击加号，选择npm，Name为Run，package.json选择你工程中的package.json，Command为run，Scripts为dev,然后就可以直接在idea中运行了
         继续点击加号，选择npm，Name为Build，package.json选择你工程中的package.json，Command为run，Scripts为build,然后就可以直接在idea中打包了。
         
     2.4 安装使用stylus（是一种健壮的css）: npm install --save-dev stylus stylus-loader        
