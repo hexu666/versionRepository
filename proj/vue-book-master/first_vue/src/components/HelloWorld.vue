@@ -1,7 +1,7 @@
 <template>
-  <div class="hello">
+  <!--<div class="hello">-->
     <!--<h1>{{ msg }}</h1>-->
-    <h2>Essential Links</h2>
+    <!--<h2>Essential Links</h2>
     <ul>
       <li>
         <a
@@ -79,16 +79,31 @@
           awesome-vue
         </a>
       </li>
-    </ul>
-    <button @click="sendAxios">发送post请求</button>
+    </ul>-->
+    <!--<button @click="sendAxios">发送post请求</button>-->
+    <!--</div>-->
+    <div id="login">
+      <form>
+        <label for="userId">用户ID</label>
+            <input type="text" v-model.trim = "loginData.userId" name="userId">
+        <label for="passWd">密码</label>
+            <input type="text" v-model.trim = "loginData.passWd" name="passWd">
+      </form>
     </div>
 </template>
 
 <script>
+
+
+
+
+</script>
+
+<!--<script>
 export default {
 
- /* name: 'HelloWorld',
-  data () {
+  name: 'HelloWorld',
+  /*data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
@@ -99,7 +114,7 @@ export default {
       }
     }
  }
-</script>
+</script>-->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
