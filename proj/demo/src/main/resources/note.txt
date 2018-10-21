@@ -1,0 +1,9 @@
+@Value
+@Component
+@ConfigurationProperties
+多环境配置
+
+从删库到跑路
+
+
+		</dependency>
